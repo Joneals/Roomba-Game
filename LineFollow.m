@@ -8,12 +8,12 @@ function LineFollow(r)
         cliffs = r.getCliffSensors();
         %disp(cliffs)
         if (cliffs.leftFront < thres)
-           offsets(1) = 0.25;
+           offsets(1) = 0.17;
            offsets(2) = 0;
            disp('Detected left!')
         
         elseif (cliffs.rightFront < thres)
-           offsets(2) = 0.25;
+           offsets(2) = 0.17;
            offsets(1) = 0;
            disp('Detected right!')
         
@@ -32,9 +32,10 @@ function LineFollow(r)
         r.setDriveVelocity(v+offsets(1), v+offsets(2));
             
         
-        if (r.getBumpers.front)
+        if (r.getBumpers.front || r.getBumpers.left || r.getBumpers.right)
+           r.moveDistance(-.5);
            r.stop();
-           break;
+           continue;
         end
         
     end
