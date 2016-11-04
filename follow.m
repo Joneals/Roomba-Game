@@ -13,7 +13,7 @@
 % follow(r)
 % Initiate the program using roomba object r
 
-function LineFollow(r)
+function follow(r)
     v = .1;
     offsets = [0 0];
     thres = 2000;
