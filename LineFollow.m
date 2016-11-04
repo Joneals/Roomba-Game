@@ -1,4 +1,18 @@
 % LineFollow
+% Created By:
+% Jacob Reynolds - jreyno51
+% Hayden Sutton - hsutton5
+% Matt Trotsky - mtrotsky
+% INPUTS:
+% r : roomba object to use
+% OUTPUTS : 
+% None
+% PURPOSE : 
+% Follow a black line on the ground using cliff sensors
+% USAGE :
+% follow(r)
+% Initiate the program using roomba object r
+
 function LineFollow(r)
     v = .1;
     offsets = [0 0];
