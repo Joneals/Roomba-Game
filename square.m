@@ -4,9 +4,9 @@
 % Hayden Sutton - hsutton5
 % Jacob Reynolds - jreyno51
 % Matt Trotsky - mtrotsky
-r = roomba(34);
+function square(r)
 
-for i=1:3
-   r.moveDistance(.5);
-   r.turnAngle(90); 
-end
+    for i=1:4
+        r.moveDistance(.5, .5);
+        r.turnAngle(90, .5); 
+    end
