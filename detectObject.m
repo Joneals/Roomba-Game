@@ -1,9 +1,9 @@
-function detectObject(cam)
+function detectObject(r)
 % Initialization
 
 hold on
     while 1
-        img = cam.snapshot;
+        img = r.getImage();
         imshow(img);
         imgray = rgb2gray(img);
         for i=1:3
