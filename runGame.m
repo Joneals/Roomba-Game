@@ -1,4 +1,11 @@
-% Run Game
+% Runs the game... pretty self descriptive
+% Created by Jacob Reynolds, Hayden Sutton, Matt Trotsky
+% jreyno51 , hsutton5 , mtrotsky
+% Usage : Pass roomba object r to function, click figure window, and use
+% arrow keys to navigate
+% Inputs : r - roomba object
+% Outputs : none
+
 function main(r)
     web(r.cameraURL);
     KeyboardControl(r);
