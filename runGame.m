@@ -18,9 +18,10 @@ function mainLoop(r)
     bumped = 0;
     lastbump = 0;
     while running;
-        cliff = r.getCliffSensors();
-        bump = r.getBumpers();
-        lightbump = r.getLightBumpers();
+        sensors = r.getAllSensors();
+        cliff = sensors.cliff;
+        bump = sensors.bumper;
+        lightbump = sensors.lightBump;
         
         if (cliff.left < 100 || cliff.right < 100 || cliff.leftFront < 100 || cliff.rightFront < 100)
            running = 0;
@@ -44,7 +45,8 @@ function mainLoop(r)
     end
     
     if bumped > 2
-       disp('You got bumped') 
+       disp('You got bumped') r
+       r.stop();
        close(gcf);
     end
 end
